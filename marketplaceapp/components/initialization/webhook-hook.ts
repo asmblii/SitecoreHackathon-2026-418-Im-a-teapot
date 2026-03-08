@@ -21,7 +21,7 @@ async function fetchItem(client: ClientSDK, xmCloudResourceAccess: ApplicationRe
         }
     });
     const error = response?.error;
-    const resultItem: WebhookItem = response?.data?.data?.data?.item;
+    const resultItem: WebhookItem = response?.data?.data?.item;
     return [resultItem, error];
 }
 
