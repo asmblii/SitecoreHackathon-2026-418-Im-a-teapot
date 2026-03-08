@@ -474,7 +474,7 @@ const FilterMultiSelect = React.forwardRef<
         {name && <input type="hidden" name={name} value={values.join(",")} />}
         <div className="relative inline-flex w-fit">
           <Popover open={open} onOpenChange={handleOpenChange}>
-            <PopoverTrigger asChild>
+            <PopoverTrigger asChild><>
               <Button ref={ref} variant="outline" disabled={disabled} aria-describedby={describedBy} className={cn(
                 "w-fit justify-between rounded-md px-3 py-2 h-10 bg-white",
                 hasValues && "pr-8 overflow-hidden",
@@ -580,6 +580,7 @@ const FilterMultiSelect = React.forwardRef<
                   className="opacity-50 pointer-events-none"
                 />
               )}
+            </>
             </PopoverTrigger>
             <PopoverContent
               className="w-(--radix-popover-trigger-width) p-1"
