@@ -1,6 +1,6 @@
 import { webhookUrl } from '@/lib/api';
 
-const name = "Marketplace Auditor Webhook";
+const name = "Marketplace Apparatus CIA";
 const webhookItemName = 'Marketplace Auditor';
 const webhookItemPath = `/sitecore/system/Webhooks/${webhookItemName}`;
 const webhookTemplateId = '{F05212CE-30A7-4733-A7F4-ED6E13F26692}';
