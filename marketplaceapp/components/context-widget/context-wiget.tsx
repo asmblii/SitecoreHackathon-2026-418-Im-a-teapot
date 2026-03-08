@@ -115,7 +115,7 @@ function PageContextWidget() {
                 </TabsContent>
             </Tabs>
             <FilterTable
-                data={data.data}
+                data={data.data ?? []}
                 showFieldChanges={true}
                 debounceTime={500}
                 emptyStateMessage="No actions found matching your criteria"
