@@ -1,7 +1,7 @@
 const urlPrefix = "https://coordinatorapi-bzacc3gkdgh7ehdd.westeurope-01.azurewebsites.net/api";
 
 export type FieldValue = {
-    id: string;
+    fieldId: string;
     value: string;
 };
 export type FieldChangedValue = FieldValue & {

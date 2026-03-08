@@ -35,7 +35,7 @@ export function FilterTable({
   debounceTime = 300,
   openFiltersByDefault = true
 }: {
-  data:  ChangeModel[]
+  data: ChangeModel[];
   showFieldChanges?: boolean;
   emptyStateMessage?: string;
   className?: string;
@@ -297,7 +297,6 @@ export function FilterTable({
           <TableRow>
             <TableHead className="w-[40px]"></TableHead>
             <TableHead>Date & Time</TableHead>
-            <TableHead>State Before</TableHead>
             <TableHead>State After</TableHead>
             <TableHead>Action Performed</TableHead>
             <TableHead>Fields Changed</TableHead>
@@ -326,11 +325,13 @@ export function FilterTable({
                 </TableCell>
                 <TableCell>{formatDate(entry.timestamp)}</TableCell>
                 <TableCell>{entry.workflowStateId}</TableCell>
-                <TableCell>{entry.user}</TableCell>
+                <TableCell>{entry.webHookData.eventName}</TableCell>
                 <TableCell>
-                  <Badge colorScheme="primary" size="sm">
-                    {entry.webHookData.changes?.fieldChanges?.length > 0}
-                  </Badge>
+                  {entry.webHookData.changes?.fieldChanges?.length && (
+                    <Badge colorScheme="primary" size="sm">
+                      {entry.webHookData.changes?.fieldChanges?.length}
+                    </Badge>
+                  )}
                 </TableCell>
                 <TableCell>{entry.user}</TableCell>
               </TableRow>
@@ -357,7 +358,7 @@ export function FilterTable({
                           (change: FieldChangedValue, index: number) => (
                             <tr key={index} className="border-b last:border-0">
                               <td className="p-2 font-mono">
-                                {change.id}
+                                {change.fieldId}
                               </td>
                               <td className="p-2">
                                 {formatFieldValue(change.originalValue)}
